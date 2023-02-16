@@ -35,6 +35,7 @@ The training process can either be done on a computer with it's own GPU or on Go
    ```
 
   * To train on a local GPU or Google Colab :
+  
    For the local GPU training
    ```
    bash custom_yolo_training.sh
