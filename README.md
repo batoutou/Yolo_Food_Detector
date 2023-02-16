@@ -1,15 +1,19 @@
 # Custom Yolo Training & Inference for Food Detection
 
 This tool is used to generate **custom datasets**, train a **Yolo** network on it and then run an **inference process**.
-It is divided in 3 different steps that are independent from one another and the user can decide to do only one of the 3 depending on what is required.
+It is divided in 3 different steps that follow each other
 
 - Step 1 : **Create adequate dataset**
 - Step 2 : **Train the custom dataset**
 - Step 3 : **Run an inference program**
 
+# Remarks 
+
+The training process can either be done on a computer with it's own GPU or on Google Colab
+
 # Requirements
 
-* Python >= 3.7
+* Python >= **3.7**
 * OpenCV
 * PyTorch / Torch
 * Yolov5 requirments ([link](https://github.com/ultralytics/yolov5/blob/master/requirements.txt))
@@ -21,32 +25,38 @@ It is divided in 3 different steps that are independent from one another and the
 1. Clone the repository and navigate to folder
 
    ```
-   git clone https://gitlab.com/enchantedtools/legend-tools.git
+   git clone https://gitlab.com/batoutou/trayvisor_test.git
+   ```
+
+2. Execute the 3 process in this following order :
+  * To generate the dataset :
+
+   ```
+   python data_preprocessing.py -t [train option]
+   ```
+
+  * To train on a local GPU or Google Colab :
+   For the local GPU training
+   ```
+   bash custom_yolo_training.sh
+   ```
+
+   For the Google Colab training
+   ```
+   Import 'dataset.zip' into the 'YOLOv5-Custom-Training.ipynb'
    ```
 
    ```
-   cd python/object_detection_dataset_generator
-   ```
-2. Execute one of the 3 process depending on your needs
-   To generate a custom dataset :
-
-   ```
-   python3 preprocessed_dataset_generator.py -n [class name]
+   Execute the notebook
    ```
 
-   To augment a custom dataset :
+  * To run the tinference process :
 
    ```
-   python3 dataset_augmentation_generator.py -n [class name] -a [nb of augmentation / image_class]
+   python detecty.py -p [img_name]
    ```
 
-   To run the training on custom algorithm :
-
-   ```
-   ./custom_yolo_training.sh
-   ```
-
-## Generate a custom dataset
+## Generate the dataset
 
 In order to generate a custom dataset like the one for the legs it is recommended to use a software such as **Vott** ([installer link](https://github.com/Microsoft/VoTT/releases)) and annotate each image by hand.
 
