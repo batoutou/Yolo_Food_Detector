@@ -23,10 +23,9 @@ The training process can either be done on a computer with it's own GPU or on Go
 # How to run
 
 1. Clone the repository and navigate to folder
-
-   ```
-   git clone https://gitlab.com/batoutou/trayvisor_test.git
-   ```
+  ```
+  git clone https://gitlab.com/batoutou/trayvisor_test.git
+  ```
 
 2. Execute the 3 process in this following order :
   * To generate the dataset :
