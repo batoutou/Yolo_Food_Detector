@@ -98,6 +98,7 @@ In order to train the custom Yolo V5 model we have two options as mentioned befo
  - First, you'll need to import the **dataset.zip** file into the colab notebook **YOLOv5-Custom-Training.ipynb** 
  - Than you can execute the notebook which in the end will download the best weights that you will use for inference
 
+* The final training output can be found at this [link](https://drive.google.com/file/d/14tUyYyrVWonshvel0OVuwe9H15aY4COw/view?usp=share_link)
 
 ## Run an inference program
 
