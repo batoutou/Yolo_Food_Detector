@@ -4,7 +4,7 @@ This tool is used to generate **custom datasets**, train a **Yolo** network on i
 
 It is divided in 3 different steps that follow each other
 
-- Step 1 : **Create adequate dataset**
+- Step 1 : **Create an adequate dataset**
 - Step 2 : **Train the custom dataset**
 - Step 3 : **Run an inference program**
 
@@ -17,9 +17,8 @@ The training process can either be done on a computer with it's own GPU or on Go
 * Python >= **3.7**
 * OpenCV
 * PyTorch / Torch
-* Yolov5 requirments ([link](https://github.com/ultralytics/yolov5/blob/master/requirements.txt))
-* PIL, shutil, argparse, random, yaml, albumentions, split-folders
-* ClearML install and init 
+* Yolov5 requirements ([link](https://github.com/ultralytics/yolov5/blob/master/requirements.txt))
+* shutil, argparse, yaml, split-folders
 
 # How to run
 
@@ -28,7 +27,7 @@ The training process can either be done on a computer with it's own GPU or on Go
   git clone https://gitlab.com/batoutou/trayvisor_test.git
   ```
 
-2. Execute the 3 process in this following order :
+2. Execute the 3 processes in this following order :
   * To generate the dataset :
 
    ```
@@ -51,7 +50,7 @@ The training process can either be done on a computer with it's own GPU or on Go
    Execute the notebook
    ```
 
-  * To run the tinference process :
+  * To run the inference process :
 
    ```
    python detecty.py -p [img_name]
@@ -61,7 +60,7 @@ The training process can either be done on a computer with it's own GPU or on Go
 
 In order to generate the dataset so that the Yolo V5 training script can understand it, I had to create a first python file that would do 5 things :
 
-- Read the JSON file : get all the information from the JSON file and store it as a dictionnary
+- Read the JSON file : get all the information from the JSON file and store it as a dictionary
 - Create a file for each image : for each image, it creates a '.txt' file with the Yolo V5 format (bounding box are represented as a ratio between 0 and 1)
   > [class] [x_center] [y_center] [width] [height]
 - Train, Val, Test split : the images and their labels are separated into 3 folders for the training, validation and testing. In addition, I left 10 images on the side for the inference process
@@ -92,7 +91,7 @@ In order to train the custom Yolo V5 model we have two options as mentioned befo
  - number of epochs
  - batch size
 
- This scipt will output the best weights of the training, which you can latter use for inference
+ This script will output the best weights of the training, which you can latter use for inference
  > best.pt
 
 * Train on Google Colab
@@ -117,4 +116,4 @@ for example :
 python detect.py -p im_0.jpg
 ```
 
-This will ouput the predicted labels and bounding box for the image
+This will output the predicted labels and bounding box for the image
